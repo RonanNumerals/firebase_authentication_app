@@ -72,7 +72,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                 decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) {
                   if (value == null || value.isEmpty) return 'Email is required';
-                  if (!value.contains('@')) return 'Enter a valid email like test@gsu.com';
+                  if (!value.contains('@') || !value.contains('.')) return 'Enter a valid email like test@gsu.com';
                   return null;
                 },
               ),
