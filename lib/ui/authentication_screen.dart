@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class RegisterScreen extends StatelessWidget {
-    const RegisterScreen({super.key});
+class AuthenticationScreen extends StatelessWidget {
+    const AuthenticationScreen({super.key});
 
     @override
     Widget build(BuildContext context) {
         return Scaffold(
             appBar: AppBar(
-                title: const Text('Register'),
+                title: const Text('Authentication'),
             ),
             body: const Center(
-                child: Text('Welcome to the Register Screen'),
+                child: Text('Welcome to the Authentication Screen'),
             ),
         );
     }
