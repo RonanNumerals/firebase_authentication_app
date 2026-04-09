@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
+import 'profile_screen.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
@@ -39,6 +40,11 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
           _passwordController.text.trim(),
         );
       }
+      if (!mounted) return;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const ProfileScreen()),
+      );
     } catch (e) {
       setState(() {
         error = e.toString();
@@ -53,11 +59,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Authentication")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
         key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
                 controller: _emailController,
