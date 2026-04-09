@@ -106,7 +106,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                       ? "Create account"
                       : "Already have an account?",
                 ),
-              )
+              ),
+              
+              if (error.isNotEmpty)
+                Text(
+                  error,
+                  style: const TextStyle(color: Colors.red),
+                ),
             ],
           ),
         )
